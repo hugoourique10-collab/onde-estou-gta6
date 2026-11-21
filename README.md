@@ -2,6 +2,8 @@
 
 Site estático (HTML + CSS + JS), sem build nem dependências.
 
-Arquivos: index.html (site), patch.css (tipografia e estilos), patch.js (cofres), patch2.js (códigos e missões secundárias).
+- index.html: site base (missões principais, navegação, progresso)
+- patch.css: tipografia e estilos dos novos componentes
+- enciclopedia.js: Dinheiro, Cofres, Academia, Relacionamento, Códigos, Animais, Missões Secundárias e pesquisa interna
 
-Publicação: GitHub Pages, branch main, pasta raiz.
+Publicação: GitHub Pages, branch main, pasta raiz. O progresso fica salvo no navegador (localStorage).

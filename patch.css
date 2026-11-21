@@ -10,3 +10,31 @@ h3{font-weight:700;letter-spacing:-.005em}
 .sf .tag{display:inline-block;margin-left:8px;padding:2px 9px;border:1px dashed rgba(255,255,255,.35);border-radius:99px;font-size:.72rem;font-weight:600;color:var(--mute);vertical-align:middle}
 .sf .tag.ok{border-style:solid;border-color:var(--salmon);color:var(--salmon)}
 .sf span{color:var(--mute)}
+
+/* ===== Enciclopédia: componentes ===== */
+[hidden]{display:none!important}
+.ctabs{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 12px}
+.ctab{flex:1 0 auto;min-width:104px;padding:9px 12px;border:1px solid var(--edge);border-radius:12px;background:var(--glass);font-weight:700;cursor:pointer;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ctab.on,.ctab:hover{background:var(--paper);color:var(--ink);text-shadow:none}
+.btn{padding:6px 12px;border:1px solid var(--edge);border-radius:8px;background:var(--glass);font-size:.85rem;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--paper);color:var(--ink);text-shadow:none}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0}
+.ckl{display:flex;align-items:center;gap:10px;padding:6px 0;cursor:pointer}
+.tbl{overflow-x:auto;margin-bottom:12px}
+.tbl table{border-collapse:collapse;min-width:900px;font-size:.84rem}
+.tbl th,.tbl td{padding:8px 10px;border-top:1px solid var(--edge);text-align:left;vertical-align:top}
+.tbl th{color:var(--salmon);font-weight:700}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.ctl input,.ctl select,textarea.obs,.mini{padding:9px 11px;border:1px solid var(--edge);border-radius:10px;background:var(--glass);color:#fff;font:inherit;min-width:0}
+.ctl input[type=search]{flex:1 1 160px}
+.ctl select option{color:#000}
+textarea.obs{width:100%;min-height:110px}
+.mini{width:100%}
+.lvls{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0 14px}
+.lv{padding:10px 4px;border:1px solid var(--edge);border-radius:10px;background:var(--glass);font-size:.78rem;font-weight:600;text-align:center;cursor:pointer}
+.lv.on{background:linear-gradient(90deg,var(--rose),var(--salmon));color:var(--ink);text-shadow:none}
+.pr{margin:4px 0 10px}
+.pr .bar{margin-top:4px}
+.warn{border-left:2px solid var(--salmon);padding:8px 12px;margin:0 0 12px;background:rgba(255,255,255,.05);border-radius:0 10px 10px 0;font-size:.92rem}
+.sres a{display:block;padding:8px 0;border-top:1px solid var(--edge);text-decoration:none}
+.sres small{display:block;color:var(--mute)}
