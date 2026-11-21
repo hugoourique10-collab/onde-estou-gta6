@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+body{font-family:"Manrope","Plus Jakarta Sans",system-ui,sans-serif;font-size:16px;line-height:1.6;letter-spacing:.005em}
+h1{font-weight:800;letter-spacing:-.02em}
+h2{font-weight:800;letter-spacing:-.015em;font-size:1.6rem}
+h3{font-weight:700;letter-spacing:-.005em}
+.lead,.note,.txt p{line-height:1.55}
+.sf{display:grid;gap:4px;padding:12px 0;border-top:1px solid var(--edge);font-size:.92rem}
+.sf:first-of-type{border-top:0}
+.sf b.code{font-size:1.25rem;letter-spacing:.08em;color:var(--salmon);font-variant-numeric:tabular-nums}
+.sf .tag{display:inline-block;margin-left:8px;padding:2px 9px;border:1px dashed rgba(255,255,255,.35);border-radius:99px;font-size:.72rem;font-weight:600;color:var(--mute);vertical-align:middle}
+.sf .tag.ok{border-style:solid;border-color:var(--salmon);color:var(--salmon)}
+.sf span{color:var(--mute)}

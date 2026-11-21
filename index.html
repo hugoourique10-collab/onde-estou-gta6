@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onde Estou no GTA 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#121215;--paper:#F2F2F5;--glass:rgba(255,255,255,.06);--edge:rgba(255,255,255,.1);--mute:rgba(255,255,255,.66);--rose:#F4A2B8;--salmon:#F7B299}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;min-height:100vh;font:400 16px/1.5 "Plus Jakarta Sans",system-ui,sans-serif;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6);background:radial-gradient(ellipse at 0% 0%,rgba(176,110,190,.25),transparent 50%),radial-gradient(ellipse at 100% 100%,rgba(244,162,184,.16),transparent 50%),linear-gradient(160deg,#20242f,#161922 60%,#1b1824) fixed}
+main{max-width:820px;margin:0 auto;padding:18px 16px 48px}
+button,a{font:inherit;color:inherit;text-shadow:inherit}
+:is(button,a,input):focus-visible{outline:2px solid #fff;outline-offset:2px}
+.glass,.card,.blk,.m,.overall,.tab,.back,#burger{border:1px solid var(--edge);background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#burger{position:fixed;z-index:30;top:14px;left:14px;width:44px;height:44px;border-radius:12px;font-size:1.3rem;line-height:1;cursor:pointer}
+#scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+#drawer{position:fixed;z-index:50;top:0;bottom:0;left:0;width:min(300px,84vw);padding:70px 14px 20px;display:flex;flex-direction:column;gap:6px;background:rgba(24,26,36,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-right:1px solid var(--edge);transform:translateX(-100%);visibility:hidden;transition:transform .28s,visibility .28s}
+#drawer a{padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:500}
+#drawer a:hover,#drawer a.on{background:var(--paper);color:var(--ink);text-shadow:none}
+body.nav #drawer{transform:none;visibility:visible}
+body.nav #scrim{opacity:1;visibility:visible}
+.top{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:center;padding:40px 0 18px;text-align:center}
+.logo{width:96px;height:auto;flex:none}
+h1{margin:0;font-size:clamp(1.5rem,5.5vw,2.15rem);line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.by{margin:4px 0 0;font-size:.95rem;font-weight:500;color:var(--mute)}
+h2{margin:6px 0 4px;font-size:1.5rem;font-weight:700}
+h3{margin:0 0 8px;font-size:1.05rem;font-weight:600}
+.lead{margin:0 0 16px;color:var(--mute)}
+.view{display:none}
+.view.on{display:block}
+.hub{display:grid;gap:12px;margin-top:8px}
+.card{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:14px;text-decoration:none;transition:background .2s,color .2s}
+.card svg{width:28px;height:28px;flex:none;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.card b{display:block;font-weight:600;font-size:1.05rem}
+.card span{font-size:.9rem;opacity:.75}
+.card:hover,.card:focus-visible{background:var(--paper);color:var(--ink);text-shadow:none}
+.back{display:inline-block;margin:0 0 14px;padding:8px 14px;border-radius:10px;text-decoration:none;font-size:.92rem;font-weight:500;transition:background .2s,color .2s}
+.back:hover{background:var(--paper);color:var(--ink);text-shadow:none}
+.blk{padding:16px 18px;border-radius:14px;margin-bottom:12px}
+.blk ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.note{margin:14px 2px 0;color:var(--mute);font-size:.88rem}
+.overall{margin:6px 0 18px;padding:14px 16px;border-radius:14px}
+.ov-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;color:var(--mute)}
+.ov-head strong{font-size:1.6rem;font-weight:700;color:#fff}
+.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar i{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rose),var(--salmon));transition:width .4s}
+.tabs{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 12px}
+.tab{flex:1 0 auto;min-width:104px;padding:9px 12px;border-radius:12px;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+.tab em{display:block;font-style:normal;font-size:.82rem;font-weight:400;opacity:.7}
+.tab:hover,.tab.on{background:var(--paper);color:var(--ink);text-shadow:none}
+.chead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px;margin:8px 2px 12px}
+.chead h2{margin:0;font-size:1.15rem}
+#chCount{color:var(--mute);font-size:.9rem}
+ul.l{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.m{display:grid;grid-template-columns:auto 1fr auto auto;grid-template-areas:"n t r c";gap:6px 14px;align-items:center;padding:13px 16px;border-radius:14px}
+.m.done{background:rgba(255,255,255,.1)}
+.num{grid-area:n;font-weight:700;color:var(--rose);font-variant-numeric:tabular-nums;min-width:3ch}
+.txt{grid-area:t;min-width:0;cursor:pointer;filter:blur(7px);user-select:none;-webkit-user-select:none;transition:filter .25s}
+.m.rev .txt{filter:none;user-select:text;-webkit-user-select:text}
+.txt h3{margin:0;font-size:1rem}
+.txt p{margin:2px 0 0;color:var(--mute);font-size:.9rem}
+.m.done h3{text-decoration:line-through;color:var(--mute)}
+.rv{grid-area:r;padding:6px 12px;border:1px solid var(--edge);border-radius:8px;background:transparent;font-size:.85rem;font-weight:500;cursor:pointer}
+.rv:hover{background:var(--paper);color:var(--ink);text-shadow:none}
+.chk{grid-area:c;display:flex}
+input[type=checkbox]{appearance:none;-webkit-appearance:none;margin:0;width:24px;height:24px;display:grid;place-content:center;border:1.5px solid rgba(255,255,255,.55);border-radius:7px;background:transparent;cursor:pointer}
+input[type=checkbox]:checked{background:var(--paper);border-color:var(--paper)}
+input[type=checkbox]:checked::after{content:"✓";color:var(--ink);font-weight:700;font-size:.95rem;line-height:1}
+.sum{display:none;grid-column:1/-1;margin-top:4px;padding:10px 14px;border-left:2px solid var(--salmon);border-radius:0 10px 10px 0;background:rgba(255,255,255,.05);animation:sin .3s}
+.m.done .sum{display:block}
+.sum strong{font-weight:600;color:var(--salmon)}
+.sum p{margin:3px 0 0;font-size:.93rem}
+@keyframes sin{from{opacity:0;transform:translateY(-4px)}}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--edge)}
+.row:first-of-type{border-top:0}
+.row small{display:block;color:var(--mute);font-size:.84rem}
+.chip{flex:none;padding:3px 10px;border:1px dashed rgba(255,255,255,.35);border-radius:99px;font-size:.78rem;color:var(--mute)}
+label.an{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--edge);cursor:pointer}
+label.an:first-of-type{border-top:0}
+.add{display:flex;gap:8px;margin-top:6px}
+.add input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--edge);border-radius:10px;background:var(--glass);color:#fff;font:inherit}
+.add button{padding:10px 16px;border:1px solid var(--edge);border-radius:10px;background:var(--glass);font-weight:600;cursor:pointer}
+.add button:hover{background:var(--paper);color:var(--ink);text-shadow:none}
+.foot{margin-top:28px;text-align:center}
+#reset{padding:4px 8px;border:0;background:none;font-size:.85rem;color:var(--mute);text-decoration:underline;cursor:pointer}
+@media (max-width:520px){.m{grid-template-columns:auto 1fr auto;grid-template-areas:"n t c" ". r r"}.rv{justify-self:start}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<button id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">☰</button>
+<div id="scrim"></div>
+<nav id="drawer" aria-label="Menu principal"></nav>
+
+<main>
+<header class="top">
+<svg class="logo" viewBox="0 0 102 92" role="img" aria-label="Logo VI" fill="none"><defs><linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="102" y2="92"><stop offset="0" stop-color="#F4A2B8"/><stop offset="1" stop-color="#F7B299"/></linearGradient></defs><path d="M4.0 8.0 L25.0 8.0 L40.0 53.6 L55.0 8.0 L76.0 8.0 L51.0 84.0 L29.0 84.0 Z M86.0 8.0 L98.0 8.0 L98.0 84.0 L86.0 84.0 Z" stroke="url(#lg)" stroke-width="1.5" stroke-linejoin="miter"/><path d="M8.7 11.4 L22.5 11.4 L40.0 64.5 L57.5 11.4 L71.3 11.4 L48.5 80.6 L31.5 80.6 Z M89.4 11.4 L94.6 11.4 L94.6 80.6 L89.4 80.6 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="miter"/></svg>
+<div><h1>Onde Estou no GTA 6</h1><p class="by">Feito por Ourique</p></div>
+</header>
+
+<section class="view on" id="v-inicio"><div class="hub" id="hub"></div></section>
+
+<section class="view" id="v-missoes">
+<a class="back" href="#inicio">← Voltar ao Início</a>
+<h2>Missões</h2>
+<div class="overall" aria-label="Progresso geral">
+<div class="ov-head"><span id="ovTxt"></span><strong id="ovPct"></strong></div>
+<div class="bar" id="ovBar" role="progressbar" aria-valuemin="0" aria-valuemax="91" aria-label="Missões concluídas"><i id="ovFill"></i></div>
+</div>
+<nav class="tabs" id="tabs" aria-label="Capítulos"></nav>
+<div class="chead"><h2 id="chTitle"></h2><span id="chCount"></span></div>
+<ul class="l" id="list"></ul>
+<p class="foot"><button type="button" id="reset">Resetar progresso</button></p>
+</section>
+
+<section class="view" id="v-academia"></section>
+<section class="view" id="v-relacionamento"></section>
+<section class="view" id="v-codigos"></section>
+<section class="view" id="v-animais"></section>
+<section class="view" id="v-dinheiro"></section>
+</main>
+
+<script>
+(function () {
+"use strict";
+
+var CH = [
+{ t: "Just Like Paradise", m: [
+["Prologue", "Abertura da história com os primeiros passos de Lucia sob supervisão."],
+["Gone Fishing", "Operação inicial de contrabando marítimo com Donnie."],
+["Gear Up", "Visita à loja de armas para equipar o arsenal básico."],
+["Just A Scratch", "Parada na oficina mecânica para reparar a caminhonete."],
+["Lab Fees", "Cobrança de aluguéis atrasados pela vizinhança."],
+["Unwanted Attention", "Incursão discreta até Hamlet ao lado de Cal."],
+["Pipework", "Trabalho braçal de reparos e encanamento na região."],
+["Hey Arnold!", "Busca por um corretor local desaparecido junto com Brian e Cal."],
+["Island Dreams", "Exploração subaquática e mergulho em alto-mar."],
+["Feng Shui", "Ajuda para carregar e reorganizar móveis pesados."],
+["Coming Home", "Reencontro marcante que reúne os dois protagonistas."],
+["Buck Me", "Primeiro assalto coordenado de alto risco da dupla."],
+["Clean Up After Donnie", "Resgate de uma carga perdida por Donnie."],
+["Down to Earth", "Operação aérea de contrabando em dupla."],
+["Clear Skies", "Encontro tenso com uma gangue local de motociclistas."],
+["Day Release", "Saída noturna agitada pela cidade com Mattia."],
+["Swamped", "Travessia pelos pântanos para negociar com os Kingfishers."],
+["Missão Confidencial (Oculta)", "Evento decisivo da trama mantido sob sigilo para evitar spoilers."],
+["Recalibration", "Momento de pausa e planejamento ao lado de Cal."],
+["Tourist Trap", "Contrato arriscado de recuperação em ponto turístico."],
+["Home Sweet Home", "Retorno definitivo para casa após os eventos iniciais."],
+["Discharge Time", "Encerramento do primeiro arco com a dupla se reorganizando."]
+]},
+{ t: "Paradise Lost", m: [
+["What’s in the Bag?", "Chegada a Port Gellhorn para recuperar equipamentos essenciais."],
+["Ambulance Chaser", "Fuga e ocultação de provas envolvendo um veículo de emergência."],
+["Just Moved In", "Compra de suprimentos para estabelecer o novo esconderijo."],
+["Girls’ Trip", "Passeio pela cidade para construir uma nova aliança local."],
+["Moses", "Aquisição de ferramentas para arrombamento de veículos."],
+["Daily Driver", "Furto de um carro confiável para as próximas fugas."],
+["Slam Dunk", "Trabalho coordenado nas ruas em parceria com Dunk."],
+["Breakfast Run", "Reunião em uma lanchonete para alinhar os próximos passos."],
+["Coffee Break", "Planejamento estratégico dos próximos alvos na região."],
+["Afternoon Delight", "Reconhecimento e coleta de informações em uma boate."],
+["Checking Out", "Preparativos finais para deixar a cidade rumo ao próximo destino."]
+]},
+{ t: "Tits Ass Drug Money", m: [
+["Welcome to Vice City", "Primeiros contatos com Dre’Quan na metrópole."],
+["Dealer’s Choice", "Negociação arriscada nas ruas conduzida por Jason."],
+["Meet the Heders", "Encontro duplo cheio de tensão social e criminal."],
+["Dubious Provenance", "Investigação em uma loja de antiguidades valiosas."],
+["Mami Knows Best", "Reencontro familiar que traz à tona antigas tensões."],
+["South Leonida Real Estate", "Confronto inesperado envolvendo a equipe M7."],
+["Tyrone", "Busca por novos contratos de segurança e serviços pesados."],
+["Here, Kitty Kitty", "Varredura em um bairro hostil à procura de Charles."],
+["Car Services", "Operação ousada de roubo de veículos de alto padrão."],
+["Top Billing", "Noite agitada em um grande show no centro da cidade."],
+["Boobie Time", "Serviço como motorista particular pelos pontos-chave de Vice City."],
+["First Impressions", "Negociação inicial com Raul para grandes negócios."],
+["Caught Slipping", "Intervenção rápida para impedir uma invasão residencial."],
+["Crosstown Traffic", "Perseguição discreta em meio ao trânsito intenso."],
+["Credit Check", "Reunião estratégica em um esconderijo fortificado."],
+["Steal the Zorruso for Randy", "Roubo planejado de um supercarro de luxo."],
+["Sinfrontera National Bank", "Reconhecimento e análise de falhas de segurança bancária."],
+["Security Expert", "Consultoria técnica com Nicole para sistemas avançados."],
+["Ride or Die", "Apoio de fogo em uma emboscada de alto risco."],
+["Company Property", "Escolta armada para proteger um carregamento valioso."],
+["The Missing Link", "Infiltração em um evento clandestino para seguir pistas."],
+["Safe Word", "Treinamento tático rigoroso para dominar uma nova habilidade."],
+["Cooties", "Bastidores caóticos da gravação de um videoclipe."],
+["Bricked Up", "Serviços clandestinos de logística para Boobie."],
+["Hidden Charges", "Aquisição de equipamentos pesados para a etapa final."],
+["The Cartel Heist", "Clímax do capítulo com um grande assalto coordenado."]
+]},
+{ t: "Vice City, Baby", m: [
+["Ocean Beach", "Instalação da nova base de operações da dupla."],
+["Another Life", "Reflexão sobre o passado enquanto novos planos são traçados."],
+["Company Cars", "Aquisição de veículos preparados para missões de alta velocidade."],
+["Lawyer Up", "Consulta jurídica para blindar a equipe contra riscos legais."],
+["Party Hard", "Escolta e segurança pessoal para uma celebridade."],
+["Heavy Lifting", "Transporte de carga pesada sob forte pressão."],
+["Photo/Shoot", "Sessão de fotos promocional que sai do controle."],
+["Making Gainz", "Construção de influência e confiança com novos aliados."],
+["Watch It", "Negociação direta com o dono de uma boate influente."],
+["Cash Injections", "Captação de recursos para financiar uma operação local."],
+["Amateur Hour", "Acerto de contas nos bastidores da indústria de entretenimento."],
+["Dirty Work", "Expansão da rede de contatos no submundo da cidade."],
+["Too Much Baggage", "Infiltração no setor de cargas de um aeroporto."],
+["Adventures in Babysitting", "Controle de multidão e segurança noturna em casa de shows."],
+["Fresh Evidence", "Operação furtiva para recuperar provas de chantagem."],
+["Power Play", "Missão de reconhecimento silencioso para coletar dados."],
+["Child’s Play", "Favor arriscado para resolver o problema de um conhecido."],
+["Headliners", "Apresentação ao vivo dos Dimez no VYB."],
+["Close Surveillance", "Monitoramento aéreo utilizando um drone espião."],
+["Delivery Method", "Operação disfarçada para interceptar uma entrega."],
+["Team Building", "Teste de lealdade e sangue frio sob pressão extrema."],
+["Fully Catered", "Roubo estratégico de um veículo especial de apoio."],
+["VCIA Takedown", "Execução de uma grande operação planejada em equipe."],
+["Sunset", "Busca urgente por respostas após uma reviravolta."],
+["Missão Confidencial (Oculta)", "Virada dramática de fim de capítulo mantida sem título para evitar spoilers."]
+]},
+{ t: "Top of the World, Ma", m: [
+["Bird in the Hand", "Tomada rápida de um veículo para iniciar a ofensiva."],
+["Taking Liberties", "Estruturação de um plano ousado contra o tempo."],
+["VC Baby", "Resposta imediata a um pedido urgente de socorro."],
+["Doggie Bag", "Rastreamento tenso de contrabando escondido."],
+["Operation Savage Glory", "Interceptação armada de uma remessa crítica."],
+["Protective Custody", "Defesa intensa para proteger aliados e conquistas."],
+["Confronto Final (Oculto)", "Desfecho explosivo da campanha principal."]
+]}
+];
+var SUM = [
+"Você viu a abertura da história: os primeiros passos de Lucia sob supervisão. É o ponto de partida que dá o tom de tudo o que vem depois.",
+"Ao lado de Donnie, você tocou a operação inicial de contrabando marítimo, o primeiro trabalho no mar que abre a rotina de serviços da campanha.",
+"Hora de se equipar: você passou pela loja de armas e montou o arsenal básico para os serviços que viriam.",
+"Uma parada na oficina mecânica deixou a caminhonete em condições de rodar, mantendo o transporte em dia para os próximos trabalhos.",
+"Você percorreu a vizinhança cobrando aluguéis atrasados, uma missão de rua para entrar no ritmo da região.",
+"Ao lado de Cal, você fez uma incursão discreta até Hamlet, em um trabalho que pedia cuidado em vez de barulho.",
+"O trabalho braçal da vez foram reparos e encanamento pela região, um respiro mais mundano entre os serviços criminosos.",
+"Junto com Brian e Cal, você saiu atrás de um corretor local desaparecido, uma busca que reuniu o grupo em torno do mesmo objetivo.",
+"Você explorou o fundo do mar em um mergulho em alto-mar, uma pausa de exploração subaquática no meio da trama.",
+"Você ajudou a carregar e reorganizar móveis pesados, uma tarefa simples que mantém a rotina dos personagens em primeiro plano.",
+"Um reencontro marcante reuniu os dois protagonistas, um marco que muda o ritmo da história a partir daqui.",
+"Foi o primeiro assalto coordenado de alto risco da dupla, quando os dois passam a trabalhar juntos em um golpe de verdade.",
+"Você resgatou uma carga perdida por Donnie, consertando mais uma bagunça dele e mantendo o negócio de pé.",
+"Em dupla, você executou uma operação aérea de contrabando, levando o trabalho do mar para o céu.",
+"Um encontro tenso colocou a dupla frente a frente com uma gangue local de motociclistas, em clima de tensão constante.",
+"Com Mattia, você viveu uma saída noturna agitada pela cidade, uma noite fora da rotina de trabalho.",
+"Você atravessou os pântanos para negociar com os Kingfishers, uma missão que leva a história para um território mais selvagem.",
+"Evento decisivo da trama, descrito aqui sem detalhes por respeito a quem ainda não chegou lá. Você já viveu o que aconteceu: é um dos grandes marcos do capítulo.",
+"Houve um momento de pausa e planejamento ao lado de Cal, para respirar e alinhar o que vem a seguir depois dos eventos anteriores.",
+"Você assumiu um contrato arriscado de recuperação em um ponto turístico, trabalhando em um cenário movimentado.",
+"Depois dos eventos iniciais, você fez o retorno definitivo para casa, fechando a fase mais turbulenta.",
+"O primeiro arco se encerra com a dupla se reorganizando, pronta para o que vem no próximo capítulo.",
+"Chegada a Port Gellhorn: você foi recuperar equipamentos essenciais para recomeçar neste novo cenário.",
+"Uma fuga e a ocultação de provas, tudo envolvendo um veículo de emergência: um serviço de improviso e sangue frio.",
+"Para estabelecer o novo esconderijo, você saiu às compras de suprimentos, o básico para ter uma base de operações.",
+"Um passeio pela cidade serviu para construir uma nova aliança local, ampliando os contatos da dupla.",
+"Você adquiriu ferramentas para arrombamento de veículos, equipamento pensado para os próximos furtos.",
+"Você furtou um carro confiável, escolhido para servir nas próximas fugas.",
+"Trabalho coordenado nas ruas em parceria com Dunk, com foco em agir em equipe.",
+"Uma reunião em uma lanchonete alinhou os próximos passos, em um encontro mais calmo antes da ação.",
+"Planejamento estratégico dos próximos alvos na região, deixando claro por onde seguir.",
+"Reconhecimento e coleta de informações em uma boate, uma missão de observação que prepara o terreno.",
+"Os preparativos finais para deixar a cidade rumo ao próximo destino fecham o capítulo, com a dupla pronta para seguir.",
+"Seus primeiros contatos com Dre’Quan na metrópole marcam a chegada a Vice City e a entrada em um novo círculo.",
+"Jason conduziu uma negociação arriscada nas ruas, e você acompanhou o ritmo de quem negocia sob pressão.",
+"Um encontro duplo cheio de tensão social e criminal, em que cada conversa pesava.",
+"Uma investigação em uma loja de antiguidades valiosas, seguindo pistas sobre peças de procedência duvidosa.",
+"Um reencontro familiar trouxe à tona antigas tensões, mostrando que o passado também cobra seu preço.",
+"Um confronto inesperado envolvendo a equipe M7 interrompeu o rumo tranquilo do capítulo.",
+"Busca por novos contratos de segurança e serviços pesados, procurando fontes de renda na cidade.",
+"Varredura em um bairro hostil à procura de Charles, em território onde era preciso andar com cuidado.",
+"Operação ousada de roubo de veículos de alto padrão, um serviço de carros caros e planejamento afiado.",
+"Uma noite agitada em um grande show no centro da cidade, entre multidão e música.",
+"Você trabalhou como motorista particular, passando pelos pontos-chave de Vice City e conhecendo a geografia da cidade.",
+"A negociação inicial com Raul abriu a porta para grandes negócios.",
+"Uma intervenção rápida impediu uma invasão residencial, exigindo reação imediata.",
+"Uma perseguição discreta em meio ao trânsito intenso, em que o desafio era acompanhar sem chamar atenção.",
+"Reunião estratégica em um esconderijo fortificado, onde os planos foram alinhados em segurança.",
+"Para Randy, você roubou de forma planejada um supercarro de luxo, o Zorruso.",
+"Reconhecimento e análise das falhas de segurança do Sinfrontera National Bank: o estudo de um alvo bancário.",
+"Consultoria técnica com Nicole sobre sistemas avançados, ajudando a entender o que a equipe enfrentaria.",
+"Apoio de fogo em uma emboscada de alto risco, em que o seu papel era cobrir o grupo.",
+"Escolta armada para proteger um carregamento valioso até o destino.",
+"Infiltração em um evento clandestino para seguir pistas, uma missão de bastidores e observação.",
+"Treinamento tático rigoroso para dominar uma nova habilidade, preparando você para etapas mais exigentes.",
+"Os bastidores caóticos da gravação de um videoclipe, uma missão que mistura entretenimento e confusão.",
+"Serviços clandestinos de logística para Boobie, movimentando mercadoria longe dos olhos da cidade.",
+"Aquisição de equipamentos pesados para a etapa final, a última preparação antes do clímax.",
+"O clímax do capítulo foi um grande assalto coordenado, em que tudo o que foi preparado até aqui entrou em jogo.",
+"Instalação da nova base de operações da dupla, um novo ponto de partida.",
+"Uma reflexão sobre o passado enquanto novos planos são traçados, num momento mais calmo e pessoal.",
+"Aquisição de veículos preparados para missões de alta velocidade, o equipamento para o que vem.",
+"Consulta jurídica para blindar a equipe contra riscos legais.",
+"Escolta e segurança pessoal para uma celebridade, um serviço de proteção em meio à fama.",
+"Transporte de carga pesada sob forte pressão, com o relógio e o peso apertando.",
+"Uma sessão de fotos promocional que saiu do controle, começando como trabalho e virando confusão.",
+"Construção de influência e confiança com novos aliados, ampliando a rede de apoio.",
+"Negociação direta com o dono de uma boate influente, um encontro de peso.",
+"Captação de recursos para financiar uma operação local, a busca por dinheiro para tocar os planos.",
+"Um acerto de contas nos bastidores da indústria de entretenimento, resolvido longe dos holofotes.",
+"Expansão da rede de contatos no submundo da cidade, somando nomes úteis para a dupla.",
+"Infiltração no setor de cargas de um aeroporto, uma missão discreta em um local de acesso restrito.",
+"Controle de multidão e segurança noturna em uma casa de shows, uma noite de trabalho no meio da festa.",
+"Operação furtiva para recuperar provas de chantagem, em que o silêncio era a regra.",
+"Missão de reconhecimento silencioso para coletar dados, observando antes de agir.",
+"Um favor arriscado para resolver o problema de um conhecido, em que a lealdade pesou.",
+"Apresentação ao vivo dos Dimez no VYB, um momento musical da campanha.",
+"Monitoramento aéreo com um drone espião, vendo a ação de cima.",
+"Operação disfarçada para interceptar uma entrega.",
+"Um teste de lealdade e sangue frio sob pressão extrema, em que a confiança do grupo foi colocada à prova.",
+"Roubo estratégico de um veículo especial de apoio, peça importante para o que vinha a seguir.",
+"Execução de uma grande operação planejada em equipe, a ação que reuniu o que foi preparado ao longo do capítulo.",
+"Busca urgente por respostas após uma reviravolta, com a tensão em alta.",
+"Uma virada dramática de fim de capítulo, descrita aqui sem detalhes para não estragar a experiência de quem ainda não chegou. Você já viveu o que aconteceu.",
+"Uma tomada rápida de um veículo deu início à ofensiva.",
+"A estruturação de um plano ousado contra o tempo, definindo o que cada um faria.",
+"A resposta imediata a um pedido urgente de socorro, um chamado que não podia esperar.",
+"Um rastreamento tenso de contrabando escondido, em que cada pista contava.",
+"A interceptação armada de uma remessa crítica, ação de peso na reta final.",
+"Uma defesa intensa para proteger aliados e conquistas, mostrando o que está em jogo.",
+"O desfecho explosivo da campanha principal, descrito aqui sem detalhes por respeito a quem ainda joga. Você chegou ao fim da história principal."
+];
+
+var TOTAL = 91, KEY = "onde-estou-gta6:v2", next = 1;
+CH.forEach(function (c) { c.s = next; next += c.m.length; });
+
+function clamp(v, max) { v = parseInt(v, 10) || 0; return Math.min(Math.max(v, 0), max); }
+var S = { done: {}, rev: {}, ch: 0, ani: {}, cus: [], mc: 0 };
+try {
+  var r = JSON.parse(localStorage.getItem(KEY) || localStorage.getItem("onde-estou-gta6:v1") || "null");
+  if (r && typeof r === "object") {
+    S.done = r.done || {}; S.rev = r.rev || {}; S.ani = r.ani || {};
+    S.cus = Array.isArray(r.cus) ? r.cus : [];
+    S.ch = clamp(r.ch, 4); S.mc = clamp(r.mc, 4);
+  }
+} catch (e) {}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+function $(s) { return document.querySelector(s); }
+function pad(n) { return String(n).padStart(2, "0"); }
+
+var BACK = '<a class="back" href="#inicio">← Voltar ao Início</a>';
+var NAV = [["inicio", "Início"], ["missoes", "Missões"], ["academia", "Academia"], ["relacionamento", "Relacionamento"], ["codigos", "Códigos"], ["animais", "Animais"], ["dinheiro", "Como Ganhar Dinheiro"]];
+var HUB = [
+["missoes", "Missões", "Onde estou — faça um checklist de todas as missões"],
+["academia", "Academia", "Melhores maneiras de deixar seus personagens com o físico ideal"],
+["relacionamento", "Relacionamento", "Melhores formas de progredir a relação como casal no jogo"],
+["codigos", "Códigos", "Explore trapaças para atingir 100% da diversão enquanto joga"],
+["animais", "Animais", "Checklist de todos os animais disponíveis para escanear e catalogar"],
+["dinheiro", "Como Ganhar Dinheiro", "Melhores formas de lucrar divididas por capítulo"]
+];
+var ICON = {
+missoes: '<path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/>',
+academia: '<path d="M6 7v10M3 10v4M18 7v10M21 10v4M6 12h12"/>',
+relacionamento: '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10z"/>',
+codigos: '<path d="M4 5h16v14H4zM8 10l3 2-3 2M13 14h3"/>',
+animais: '<circle cx="6" cy="10" r="1.6"/><circle cx="10" cy="6" r="1.6"/><circle cx="14" cy="6" r="1.6"/><circle cx="18" cy="10" r="1.6"/><path d="M12 12c-3 0-5 2.5-5 5 0 2 2 2.4 5 1.4 3 1 5 .6 5-1.4 0-2.500-2-5-5-5z"/>',
+dinheiro: '<circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.500c0-1-1.500-1.500-3-1.500s-3 .6-3 1.800c0 2.500 6 1.200 6 3.700 0 1.200-1.500 1.800-3 1.800s-3-.7-3-1.700"/>'
+};
+
+var GUIDE = {
+academia: {
+t: "Academia",
+d: "Jason e Lucia têm status separados: Força aumenta a vida máxima, Cardio aumenta a estamina máxima e Foco amplia a mira em câmera lenta.",
+s: [
+{ h: "Métodos normais", l: [
+"Força: treine com pesos (supino, levantamento terra, agachamento, barra fixa, kettlebell). O equipamento do deque atrás da casa de Jason, no Capítulo 1, é grátis; as academias cobram mensalidade.",
+"Cardio: esteira, bicicleta ergométrica, saco de pancadas, corrida, ciclismo, natação e caiaque elevam a estamina.",
+"Foco também precisa ser treinado. Comer e beber antes do treino dá um bônus temporário de Foco, vida e estamina.",
+"Treine descansado e alimentado: dormir recupera vida e estamina, e treinar cansado ou com fome rende menos.",
+"Termine a série: parar no meio perde o ganho. Nos pesos, controle o ritmo dos gatilhos para não zerar a estamina antes do fim.",
+"Comer demais engorda e treinar constrói músculo, então o visual dos personagens muda.",
+"Acompanhe os números no app Fitness do celular ou no perfil de cada um, no menu Jason & Lucia."
+]},
+{ h: "Atalhos e truques", l: [
+"Treine em dupla: quando Jason e Lucia vão juntos à academia, quem você não controla faz um treino ao mesmo tempo. É o jeito mais rápido de evoluir os dois.",
+"Comece pelo ponto fraco: Jason sai com boa Força, mas Cardio e Foco baixos. Priorize esses dois e só mantenha a Força.",
+"Use o equipamento grátis da casa antes de pagar uma academia.",
+"Os status são por personagem: treinar só um deles não evolui o outro."
+]}
+],
+n: "Não encontrei nenhum exploit de físico confirmado; os atalhos acima são mecânicas do próprio jogo. Base: guias publicados no lançamento (19/11/2026)."
+},
+relacionamento: {
+t: "Relacionamento",
+d: "O vínculo de Jason e Lucia tem 4 níveis, de Running on Empty (1/4) a Hot Together (4/4). Veja o nível no menu Jason & Lucia ou segurando direita no D-pad.",
+s: [
+{ h: "Métodos normais", l: [
+"Passe tempo juntos no mundo aberto, fora das missões: dançar, passear, fazer compras, treinar e outras atividades em dupla.",
+"Jogue dos dois lados: a Rockstar diz que é preciso tratar bem o parceiro tanto como Jason quanto como Lucia.",
+"Crimes em dupla bem-sucedidos, como assaltos e fugas da polícia, também aumentam o vínculo.",
+"Pequenos gestos de afeto sempre ajudam. Se um dos dois ficar com o perfil criminal “Irredeemable”, o vínculo pode não se recuperar.",
+"Se o casal for negligenciado, eles se afastam. Mesmo no pior nível, a parceria criminal continua e a história segue."
+]},
+{ h: "Atalhos", l: [
+"Melhor hora para subir o nível: logo depois de um grande evento da história ou de um assalto ousado com fuga da polícia.",
+"Treinar juntos na academia conta como tempo em casal e ainda evolui os dois personagens de uma vez.",
+"A troca entre Jason e Lucia só libera após um marco do Capítulo 2, então os ganhos como casal aceleram a partir daí."
+]}
+],
+n: "O nível 2 aparece com nomes diferentes nos guias consultados. O vínculo muda cenas entre o casal, mas não garante um final específico. Não encontrei exploits confirmados."
+}
+};
+
+var COD = [
+["Veículos", [["Interstate Ambulance", "Descubra o veículo no menu Progresso", ""], ["Airboat 09", "Concluir 5 desafios de sobrevivência", ""], ["Western Zombie Bobber", "Concluir todos os desafios criminais", ""]]],
+["Armas", []],
+["Dinheiro/Status", [["US$ 250.000", "Terminar a história principal", ""], ["Colete (Body Armor)", "", ""], ["Bêbado (Drunk)", "Gastar US$ 2.500 em bebida", ""]]],
+["Clima/Mundo", [["Avançar o tempo", "Encontrar 10 relógios colecionáveis", ""], ["Filtro Pixel Art", "Ganhar US$ 250.000 vendendo colecionáveis", ""], ["Filtro Hellscape", "Roubar 100 veículos da polícia", ""]]],
+["Nível de Procurado", [["Aumentar nível de procurado", "", ""]]]
+];
+
+var ANI = [
+["Mamíferos", ["Cervo", "Javali", "Urso", "Pantera-da-Flórida", "Guaxinim", "Macaco-rhesus"]],
+["Aves", ["Flamingo", "Pelicano", "Garça", "Pombo"]],
+["Répteis e anfíbios", ["Jacaré", "Iguana", "Sapo-cururu", "Tartaruga-marinha"]],
+["Vida marinha", ["Golfinho", "Tubarão", "Peixe-boi", "Enguia", "Peixes"]]
+];
+
+var MON = [
+{ h: "Capítulo 1: não vale farmar", l: [
+"Segundo um guia, o dinheiro acumulado no Capítulo 1 se perde quando o capítulo termina. Gaste só no necessário.",
+"Roube operações de gangues (ícones amarelos no mapa) e venda os narcóticos a Brian ou Donnie.",
+"Vença corridas para um extra rápido.",
+"Stick-ups em lojas rendem poucas centenas e esquentam a polícia."
+]},
+{ h: "Capítulo 2: carros e cofres", l: [
+"Depois de chegar a Port Gellhorn, venda narcóticos a Dunk.",
+"La Cascara Motel é uma das melhores operações ilegais para lucrar.",
+"Roube carros e venda no Pay ’n’ Spray ou ao Moses, que prefere veículos sem rastreador.",
+"Procure os códigos de cofres do Capítulo 2 para dinheiro extra.",
+"Dá para pagar roupas e armas, mas ainda não compensa farmar grandes quantias."
+]},
+{ h: "Capítulo 3: o dinheiro deslancha", l: [
+"É aqui que os melhores métodos aparecem, apresentados pela própria história.",
+"Assaltos a joalherias pagam até US$ 25.000.",
+"Veículos com rastreador padrão e supercarros rendem mais na revenda.",
+"Confira o comprador antes de viajar: cada receptador aceita categorias diferentes."
+]},
+{ h: "Capítulo 4: rumo aos cofres de banco", l: [
+"Continue com joalherias e venda de carros.",
+"No fim do capítulo, antes de iniciar a linha de encerramento, liberam-se os assaltos a cofres de banco, o método mais lucrativo e mais difícil.",
+"Guias tratam esse momento como ponto sem volta perto do fim da história, então faça os cofres antes."
+]},
+{ h: "Capítulo 5: reta final", l: [
+"Os métodos dos capítulos 3 e 4 continuam valendo.",
+"Se ainda não fez, aproveite os assaltos a cofres antes de entrar no ponto sem volta.",
+"Terminar a história aparece em guias como fonte de dinheiro e libera o código de US$ 250.000 (veja Códigos)."
+]}
+];
+
+/* ---------- navegação ---------- */
+$("#drawer").innerHTML = NAV.map(function (n) { return '<a href="#' + n[0] + '">' + n[1] + "</a>"; }).join("");
+$("#hub").innerHTML = HUB.map(function (h) {
+  return '<a class="card" href="#' + h[0] + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + ICON[h[0]] + "</svg><div><b>" + h[1] + "</b><span>" + h[2] + "</span></div></a>";
+}).join("");
+function toggle(o) { document.body.classList.toggle("nav", o); $("#burger").setAttribute("aria-expanded", o); }
+$("#burger").addEventListener("click", function () { toggle(!document.body.classList.contains("nav")); });
+$("#scrim").addEventListener("click", function () { toggle(false); });
+$("#drawer").addEventListener("click", function (e) { if (e.target.closest("a")) toggle(false); });
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") toggle(false); });
+function route() {
+  var id = (location.hash || "#inicio").slice(1);
+  if (!$("#v-" + id)) id = "inicio";
+  document.querySelectorAll(".view").forEach(function (v) { v.classList.toggle("on", v.id === "v-" + id); });
+  document.querySelectorAll("#drawer a").forEach(function (a) { a.classList.toggle("on", a.getAttribute("href") === "#" + id); });
+  toggle(false);
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+
+/* ---------- guias (academia, relacionamento) ---------- */
+Object.keys(GUIDE).forEach(function (k) {
+  var g = GUIDE[k];
+  $("#v-" + k).innerHTML = BACK + "<h2>" + g.t + '</h2><p class="lead">' + g.d + "</p>" +
+    g.s.map(function (s) { return '<div class="blk"><h3>' + s.h + "</h3><ul>" + s.l.map(function (i) { return "<li>" + i + "</li>"; }).join("") + "</ul></div>"; }).join("") +
+    '<p class="note">' + g.n + "</p>";
+});
+
+/* ---------- códigos ---------- */
+$("#v-codigos").innerHTML = BACK + "<h2>Códigos</h2>" +
+  '<p class="lead">Trapaças do modo história, para PS5 e Xbox Series X|S.</p>' +
+  '<div class="blk"><h3>Como inserir</h3><ul>' +
+  "<li>Abra o celular com ↑ no D-pad.</li>" +
+  "<li>PS5: segure L1 e aperte R1. Xbox Series X|S: segure LB e aperte RB.</li>" +
+  "<li>Digite a sequência do D-pad. O código é o mesmo nos dois consoles.</li>" +
+  "<li>Cada trapaça só libera depois de zerar o jogo e cumprir um requisito próprio. Usar trapaças desativa troféus e conquistas na sessão.</li></ul></div>" +
+  COD.map(function (c) {
+    return '<div class="blk"><h3>' + c[0] + "</h3>" + (c[1].length ? c[1].map(function (i) {
+      return '<div class="row"><div>' + i[0] + "<small>" + (i[1] || "Requisito a confirmar") + '</small></div><span class="chip">' + (i[2] || "código a confirmar") + "</span></div>";
+    }).join("") : '<p class="lead" style="margin:0">Nenhum código confirmado até agora.</p>') + "</div>";
+  }).join("") +
+  '<p class="note">O jogo tem 61 trapaças, mas as sequências divergem entre os guias do lançamento. Para não passar código errado, listei só nomes e requisitos que apareceram nos guias; as sequências ficam “a confirmar”.</p>';
+
+/* ---------- animais ---------- */
+function aniGroups() { return S.cus.length ? ANI.concat([["Adicionados por você", S.cus]]) : ANI; }
+function renderAni() {
+  var v = $("#v-animais");
+  v.innerHTML = BACK + "<h2>Animais</h2>" +
+    '<p class="lead">Marque os animais que já escaneou. A Rockstar fala em mais de 170 espécies; esta é uma lista inicial, e você pode adicionar outros abaixo.</p>' +
+    '<div class="overall"><div class="ov-head"><span id="anTxt"></span><strong id="anPct"></strong></div><div class="bar"><i id="anFill"></i></div></div>' +
+    aniGroups().map(function (g, gi) {
+      return '<div class="blk"><h3>' + g[0] + "</h3>" + g[1].map(function (n, ni) {
+        return '<label class="an"><input type="checkbox" data-g="' + gi + '" data-n="' + ni + '"><span></span></label>';
+      }).join("") + "</div>";
+    }).join("") +
+    '<div class="add"><input id="anNew" type="text" maxlength="40" placeholder="Nome do animal" aria-label="Nome do animal"><button type="button" id="anAdd">Adicionar</button></div>';
+  v.querySelectorAll("input[type=checkbox]").forEach(function (cb) {
+    var n = aniGroups()[cb.dataset.g][1][cb.dataset.n];
+    cb.checked = !!S.ani[n];
+    cb.nextElementSibling.textContent = n;
+  });
+  paintAni();
+}
+function paintAni() {
+  var all = [];
+  aniGroups().forEach(function (g) { all = all.concat(g[1]); });
+  var d = all.filter(function (n) { return S.ani[n]; }).length, p = all.length ? Math.round(d / all.length * 100) : 0;
+  $("#anTxt").textContent = d + " de " + all.length + " animais escaneados";
+  $("#anPct").textContent = p + "%";
+  $("#anFill").style.width = p + "%";
+}
+$("#v-animais").addEventListener("change", function (e) {
+  var cb = e.target;
+  if (cb.type !== "checkbox") return;
+  var n = aniGroups()[cb.dataset.g][1][cb.dataset.n];
+  if (cb.checked) S.ani[n] = 1; else delete S.ani[n];
+  save(); paintAni();
+});
+$("#v-animais").addEventListener("click", function (e) {
+  if (!e.target.closest("#anAdd")) return;
+  var inp = $("#anNew"), n = inp.value.trim();
+  if (!n) return;
+  var known = false;
+  aniGroups().forEach(function (g) { if (g[1].some(function (x) { return x.toLowerCase() === n.toLowerCase(); })) known = true; });
+  if (!known) { S.cus.push(n); save(); }
+  renderAni();
+});
+renderAni();
+
+/* ---------- dinheiro ---------- */
+function renderMon() {
+  var c = MON[S.mc];
+  $("#v-dinheiro").innerHTML = BACK + "<h2>Como Ganhar Dinheiro</h2>" +
+    '<p class="lead">Escolha o capítulo em que você está.</p><div class="tabs" id="mtabs">' +
+    MON.map(function (m, i) { return '<button type="button" class="tab' + (i === S.mc ? " on" : "") + '" data-i="' + i + '" aria-pressed="' + (i === S.mc) + '">Capítulo ' + (i + 1) + "</button>"; }).join("") +
+    '</div><div class="blk"><h3>' + c.h + "</h3><ul>" + c.l.map(function (i) { return "<li>" + i + "</li>"; }).join("") + "</ul></div>" +
+    '<div class="blk"><h3>Dicas gerais</h3><ul><li>Roubar outros criminosos, como operações de gangues e traficantes, costuma dar o melhor retorno.</li>' +
+    "<li>Existe um limite de dinheiro carregado (relatado em US$ 20.000 no início, aumentando com a história).</li></ul></div>" +
+    '<p class="note">Valores e métodos vêm de guias publicados no lançamento (19/11/2026) e podem mudar com atualizações.</p>';
+}
+$("#v-dinheiro").addEventListener("click", function (e) {
+  var b = e.target.closest(".tab");
+  if (!b) return;
+  S.mc = parseInt(b.dataset.i, 10); save(); renderMon();
+  $('#mtabs [data-i="' + S.mc + '"]').focus();
+});
+renderMon();
+
+/* ---------- missões ---------- */
+var tabs = $("#tabs"), list = $("#list");
+CH.forEach(function (c, i) {
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "tab"; b.dataset.ch = i;
+  b.innerHTML = "<span>Capítulo " + (i + 1) + "</span><em></em>";
+  tabs.appendChild(b);
+});
+function count(c) { var d = 0; for (var i = 0; i < c.m.length; i++) if (S.done[c.s + i]) d++; return d; }
+function paint() {
+  var tot = 0;
+  CH.forEach(function (c, i) {
+    var d = count(c), b = tabs.children[i];
+    tot += d;
+    b.querySelector("em").textContent = d + "/" + c.m.length;
+    b.classList.toggle("on", i === S.ch);
+    b.setAttribute("aria-pressed", i === S.ch);
+  });
+  $("#ovTxt").textContent = tot + " de " + TOTAL + " missões concluídas";
+  $("#ovPct").textContent = Math.round(tot / TOTAL * 100) + "%";
+  $("#ovFill").style.width = (tot / TOTAL * 100) + "%";
+  $("#ovBar").setAttribute("aria-valuenow", tot);
+  var c = CH[S.ch];
+  $("#chTitle").textContent = "Capítulo " + (S.ch + 1) + ": " + c.t;
+  $("#chCount").textContent = count(c) + " de " + c.m.length + " concluídas";
+}
+function sync(li) {
+  var id = li.dataset.id, rv = !!S.rev[id], dn = !!S.done[id];
+  li.classList.toggle("rev", rv);
+  li.classList.toggle("done", dn);
+  li.querySelector(".rv").textContent = rv ? "Borrar" : "Revelar";
+  li.querySelector("input").checked = dn;
+}
+function renderList() {
+  var c = CH[S.ch];
+  list.innerHTML = "";
+  c.m.forEach(function (x, i) {
+    var id = c.s + i, li = document.createElement("li");
+    li.className = "m"; li.dataset.id = id;
+    li.innerHTML = '<span class="num">#' + pad(id) + "</span>" +
+      '<div class="txt"><h3></h3><p></p></div>' +
+      '<button type="button" class="rv"></button>' +
+      '<label class="chk"><input type="checkbox" aria-label="Marcar a missão ' + id + ' como concluída"></label>' +
+      '<aside class="sum"><strong>Resumo da missão</strong><p></p></aside>';
+    li.querySelector("h3").textContent = x[0];
+    li.querySelector("p").textContent = x[1];
+    li.querySelector(".sum p").textContent = SUM[id - 1] || "";
+    sync(li);
+    list.appendChild(li);
+  });
+}
+list.addEventListener("click", function (e) {
+  var li = e.target.closest(".m");
+  if (!li || !(e.target.closest(".txt") || e.target.closest(".rv"))) return;
+  var id = li.dataset.id;
+  if (S.rev[id]) delete S.rev[id]; else S.rev[id] = 1;
+  save(); sync(li);
+});
+list.addEventListener("change", function (e) {
+  var li = e.target.closest(".m");
+  if (!li) return;
+  var id = li.dataset.id;
+  if (e.target.checked) { S.done[id] = 1; S.rev[id] = 1; } else { delete S.done[id]; }
+  save(); sync(li); paint();
+});
+tabs.addEventListener("click", function (e) {
+  var b = e.target.closest(".tab");
+  if (!b) return;
+  S.ch = parseInt(b.dataset.ch, 10);
+  save(); renderList(); paint();
+});
+$("#reset").addEventListener("click", function () {
+  if (confirm("Resetar o progresso das missões? As missões concluídas e reveladas serão apagadas deste navegador.")) {
+    S.done = {}; S.rev = {}; S.ch = 0;
+    save(); renderList(); paint();
+  }
+});
+
+renderList();
+paint();
+route();
+})();
+</script>
+<link rel="stylesheet" href="patch.css">
+<script src="patch.js"></script>
+<script src="patch2.js"></script>
+</body>
+</html>
